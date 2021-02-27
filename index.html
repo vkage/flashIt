@@ -1,11 +1,11 @@
-{% extends "base.html" %}
-
-{% block title %}
-Welcome
-{% endblock %}
-
-{% block content%}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
     <h1> Welcome to my Page!!</h1>
     <p>This is the Flash Card application !! With FLASK !!
     </p>
@@ -15,7 +15,7 @@ Welcome
         <ul>
             {% for card in cards%}
             <li>
-                    <a href="{{ url_for('cards', index=loop.index0) }}">
+                    <a href="templates/card">
                         {{card.question}}
                     </a>
             </li>
@@ -24,13 +24,13 @@ Welcome
     </p>
     <p>
     <button>
-            <a href="{{ url_for('cards',index=0) }}">Start Exploring!!</a> <br>
+            <a href="templates/card">Start Exploring!!</a> <br>
     </button>
     </p>
     <p>
     <button>
-            <a href="{{ url_for('add_card') }}">Add Card</a> <br>
+            <a href="templates/add_card">Add Card</a> <br>
     </button>
     </p>
-
-{% endblock %}
+</body>
+</html>
