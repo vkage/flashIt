@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block content%}
+
+    <h1> Welcome to my Page!!</h1>
+    <p>This is the Flash Card application !! With FLASK !!
+    </p>
+    <!--img src="/static/flasklogo.png"!-->
+    <h2>Flash Cards List</h2>
+    <p>
+        <ul>
+            {% for card in cards%}
+            <li>
+                    <a href="{{ url_for('cards', index=loop.index0) }}">
+                        {{card.question}}
+                    </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </p>
+    <p>
+    <button>
+            <a href="{{ url_for('cards',index=0) }}">Start Exploring!!</a> <br>
+    </button>
+    </p>
+    <p>
+    <button>
+            <a href="{{ url_for('add_card') }}">Add Card</a> <br>
+    </button>
+    </p>
+
+{% endblock %}
